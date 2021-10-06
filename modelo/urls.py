@@ -4,5 +4,5 @@ from . import views
 
 # URLConf
 urlpatterns = [
-    path('submit/', views.oi)
+    path('submit/', views.submit_form)
 ]
