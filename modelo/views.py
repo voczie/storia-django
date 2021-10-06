@@ -3,4 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 
 def oi(request):
-    return render(request, 'modelo/index.html')
+    if request.method == 'GET':
+      return render(request, 'modelo/index.html')
+    else:
+      return render(request, 'modelo/index.html')

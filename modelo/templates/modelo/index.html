@@ -109,7 +109,8 @@
           </div>
 
           <div class="form-floating centralize txtAreaInt">
-            <form action="/submit" method="POST" style="width: 100%;" >
+            <form action="/submit/" method="POST" style="width: 100%;" >
+              {% csrf_token %}
               <!-- Button trigger modal -->
               <div class="row">
                 <div class="col">
