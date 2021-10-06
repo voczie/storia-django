@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 
 def oi(request):
-    html = "<h1>sotira djano</h1>"
-    return HttpResponse(html)
+    return render(request, 'modelo/index.html')
