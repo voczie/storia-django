@@ -4,5 +4,5 @@ from . import views
 
 # URLConf
 urlpatterns = [
-    path('sotira/', views.oi)
+    path('submit/', views.oi)
 ]
