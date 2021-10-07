@@ -4,5 +4,7 @@ from . import views
 
 # URLConf
 urlpatterns = [
-    path('submit/', views.submit_form)
+    path('index/', views.submit_form, name='index'),
+    path('members/', views.members, name='members'),
+    path('social/', views.social, name='social')
 ]

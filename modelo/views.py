@@ -23,3 +23,9 @@ def submit_form(request):
       print(output_text)
       
       return render(request, 'modelo/index.html', {'texto': output_text})
+
+def members(request):
+  return render(request, 'modelo/members.html')
+
+def social(request):
+  return render(request, 'modelo/social.html')
