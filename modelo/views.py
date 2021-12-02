@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from . import functions
+from . import functions, models
 
 def submit_form(request):
     if request.method == 'GET':
@@ -18,11 +18,24 @@ def submit_form(request):
       output = functions.query({"inputs": example,
                                "parameters": {'repetition_penalty': float(temperature), 'num_beams': 5,
                                               'no_repeat_ngram_size': 3, 'max_length': input_len + int(size)}})
-
+      
       output_text = functions.remove_token(output[0].get('generated_text'))
       print(output_text)
       
       return render(request, 'modelo/index.html', {'texto': output_text})
+
+def save_form(request):
+      post_returns = request.POST.dict()
+
+      text = post_returns.get('text[]')
+      size = post_returns.get('length[]')
+      temperature = post_returns.get('temperature[]')
+
+      story = models.Story(example=text, size=int(size), temperature=float(temperature))
+      story.save()
+      print("StorIA registrada! ID: {}".format(story.id))
+
+      return render(request, 'modelo/index.html')
 
 def members(request):
   return render(request, 'modelo/members.html')
