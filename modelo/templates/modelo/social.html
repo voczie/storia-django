@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="{% static 'modelo/global.css' %}" rel="stylesheet">
 
-    <title>stoRIA</title>
+    <title>StorIA</title>
   </head>
   <body>
 
@@ -20,7 +20,7 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid row">
           <div class="col-1 centralize">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="https://github.com/TailUFPB.png" alt="" width="120" height="98" class="d-inline-block align-text-top">          
             </a>
           </div>
@@ -41,7 +41,7 @@
             </a>
           </div>
           <div class="col centralize">
-              <h1 ><a href="{% url 'index' %}">storIA</a> </h1> <br>
+              <h1 ><a href="{% url 'index' %}">StorIA</a> </h1> <br>
            
           </div>
           <div class="col">

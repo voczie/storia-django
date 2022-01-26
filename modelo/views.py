@@ -18,7 +18,7 @@ def submit_form(request):
       output = functions.query({"inputs": example,
                                "parameters": {'repetition_penalty': float(temperature), 'num_beams': 5,
                                               'no_repeat_ngram_size': 3, 'max_length': input_len + int(size)}})
-      
+      print(output)
       output_text = functions.remove_token(output[0].get('generated_text'))
       print(output_text)
       
@@ -36,6 +36,18 @@ def save_form(request):
       print("StorIA registrada! ID: {}".format(story.id))
 
       return render(request, 'modelo/index.html')
+
+def load_storia(request, post_id):
+  if request.method == 'GET':
+    
+    all_records = models.Story.objects.all()
+    actual_record = all_records[post_id]
+
+    actual_record_dict = {
+      'texto':actual_record.example
+    }
+
+    return render(request, 'modelo/storias.html', actual_record_dict)
 
 def members(request):
   return render(request, 'modelo/members.html')

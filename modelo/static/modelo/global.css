@@ -31,6 +31,11 @@ h1{
   color: var(--background);
 }
 
+p{
+  background: red;
+  padding: 0 16px;
+}
+
 button{
   cursor: pointer; /*altera o cursor ao mover sobre o botao*/
 }
@@ -130,4 +135,8 @@ textarea { height: auto; font-family: "Lucida Console", "Courier New", monospace
 
 .socialTitle{
   color:#2E384D;
+}
+
+.no-marginLR{
+  background: red;
 }
