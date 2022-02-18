@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . import functions, models
 
 def submit_form(request):
@@ -39,7 +40,6 @@ def save_form(request):
 
 def load_storia(request, post_id):
   if request.method == 'GET':
-    
     all_records = models.Story.objects.all()
     actual_record = all_records[post_id]
 
@@ -48,6 +48,21 @@ def load_storia(request, post_id):
     }
 
     return render(request, 'modelo/storias.html', actual_record_dict)
+
+def load_storias(request):
+  all_records = models.Story.objects.all()
+  page = request.GET.get('page', 1)
+
+  paginator = Paginator(all_records, 5)
+
+  try:
+    records = paginator.page(page)
+  except PageNotAnInteger:
+    records = paginator.page(page)
+  except EmptyPage:
+    records = paginator.page(page)
+
+  return render(request, 'modelo/storiaspage.html', {'records': records})
 
 def members(request):
   return render(request, 'modelo/members.html')

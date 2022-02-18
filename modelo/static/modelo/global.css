@@ -26,13 +26,14 @@ body{
 input, textarea, button{
   font: 400 16px "Inter", sans-serif;
 }
+
 h1{
   font: 400 83px, "Varela Round", sans-serif;
   color: var(--background);
 }
 
 p{
-  background: red;
+  background: var(--background);
   padding: 0 16px;
 }
 
@@ -138,5 +139,5 @@ textarea { height: auto; font-family: "Lucida Console", "Courier New", monospace
 }
 
 .no-marginLR{
-  background: red;
+  background: rgba(255, 0, 0, 0);
 }
