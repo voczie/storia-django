@@ -18,39 +18,49 @@
 
     <!--Começo Header-->
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid row">
-          <div class="col-1 centralize">
-            <a class="navbar-brand" href="{% url 'index' %}">
-                <img src="https://github.com/TailUFPB.png" alt="" width="120" height="98" class="d-inline-block align-text-top">          
-            </a>
-          </div>
-          
-          <div class="col-1">
-            <a class="navbar-brand" href="{% url 'members' %}">
-                <span class="d-inline-block align-text-top">Membros</span>
-            </a>
-          </div>
-          <div class="col-1 centralize">
-            <a class="navbar-brand" href="https://aria.ci.ufpb.br/tail/">
-                <span class="d-inline-block align-text-top">TAIL</span>
-            </a>
-          </div>
-          <div class="col-1 centralize">
-            <a class="navbar-brand" href="{% url 'social'%}">
-                <span class="d-inline-block align-text-top">Redes Sociais</span>
-            </a>
-          </div>
-          <div class="col centralize">
-              <h1 ><a href="{% url 'index' %}">StorIA</a> </h1> <br>
-           
-          </div>
-          <div class="col">
-
-          </div>
-          
-          </div>   
+      <div class="container-fluid row">
+        <div class="col-2 centralize">
+          <a class="navbar-brand" href="{% url 'index' %}">
+              <img src="https://github.com/TailUFPB.png" alt="" width="120" height="98" class="d-inline-block align-text-top">          
+          </a>
         </div>
-    </nav>
+        
+        <div class="col-1">
+          <a class="navbar-brand" href="{% url 'members' %}">
+              <span class="d-inline-block align-text-top">Membros</span>
+          </a>
+        </div>
+        <div class="col-1 centralize">
+          <a class="navbar-brand" href="https://aria.ci.ufpb.br/tail/">
+              <span class="d-inline-block align-text-top">TAIL</span>
+          </a>
+        </div>
+        <div class="col-1 centralize">
+          <a class="navbar-brand" href="{% url 'social'%}">
+              <span class="d-inline-block align-text-top">Redes Sociais</span>
+          </a>
+        </div>
+        
+        <div class="col centralize">
+            <h1 ><a href="{% url 'index' %}">StorIA</a> </h1> <br>
+        </div>
+        <div class="col-1 centralize">
+          <a class="navbar-brand" href="{% url 'storias' %}">
+              <span class="d-inline-block align-text-top">Lista de Storias</span>
+          </a>
+        </div>
+        <div class="col-2 centralize">
+          <a class="navbar-brand" href="{% url 'storiaspage' %}">
+              <span class="d-inline-block align-text-top">Outra Lista de Storias</span>
+          </a>
+
+        </div>
+
+        <div class="col">
+
+        </div>
+
+  </nav>     
     <!--Fim Header-->
     <br>
 

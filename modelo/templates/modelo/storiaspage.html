@@ -18,8 +18,8 @@
 
     <!--Começo Header-->
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid row no-marginLR">
-          <div class="col-1 centralize">
+        <div class="container-fluid row">
+          <div class="col-2 centralize">
             <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="https://github.com/TailUFPB.png" alt="" width="120" height="98" class="d-inline-block align-text-top">          
             </a>
@@ -40,17 +40,27 @@
                 <span class="d-inline-block align-text-top">Redes Sociais</span>
             </a>
           </div>
+          
           <div class="col centralize">
               <h1 ><a href="{% url 'index' %}">StorIA</a> </h1> <br>
-           
           </div>
+          <div class="col-1 centralize">
+            <a class="navbar-brand" href="{% url 'storias' %}">
+                <span class="d-inline-block align-text-top">Lista de Storias</span>
+            </a>
+          </div>
+          <div class="col-2 centralize">
+            <a class="navbar-brand" href="{% url 'storiaspage' %}">
+                <span class="d-inline-block align-text-top">Outra Lista de Storias</span>
+            </a>
+
+          </div>
+
           <div class="col">
 
           </div>
-          
-          </div>   
-        </div>
-    </nav>
+
+    </nav>     
     <!--Fim Header-->
     <br>
 

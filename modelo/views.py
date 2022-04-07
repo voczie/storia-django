@@ -1,3 +1,4 @@
+from ctypes import sizeof
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
@@ -38,22 +39,37 @@ def save_form(request):
 
       return render(request, 'modelo/index.html')
 
-def load_storia(request, post_id):
-  if request.method == 'GET':
-    all_records = models.Story.objects.all()
-    actual_record = all_records[post_id]
+# def load_storia(request, post_id):
+#   if request.method == 'GET':
+#     all_records = models.Story.objects.all()
+#     actual_record = all_records[post_id]
 
-    actual_record_dict = {
-      'texto':actual_record.example
-    }
+#     actual_record_dict = {
+#       'texto':actual_record.example
+#     }
 
-    return render(request, 'modelo/storias.html', actual_record_dict)
+#     return render(request, 'modelo/storias.html', actual_record_dict)
+
+def load_storia(request):
+  all_records = models.Story.objects.all()
+  page = request.GET.get('page', 1)
+
+  paginator = Paginator(all_records, 1)
+
+  try:
+    records = paginator.page(page)
+  except PageNotAnInteger:
+    records = paginator.page(page)
+  except EmptyPage:
+    records = paginator.page(page)
+
+  return render(request, 'modelo/storias.html', {'records': records})
 
 def load_storias(request):
   all_records = models.Story.objects.all()
   page = request.GET.get('page', 1)
 
-  paginator = Paginator(all_records, 5)
+  paginator = Paginator(all_records, len(all_records))
 
   try:
     records = paginator.page(page)
